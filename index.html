@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <form name="tasks">
+        <input
+          name="task"
+          placeholder="Qual sua próxima tarefa?"
+        />
+
+        <button type="submit">add</button>
+      </form>
+
+      <ul id="task-list">
+        <li>
+          <label>
+            <input type="checkbox">
+            minha tarefa 1
+          </label>
+
+          <button>
+            <img src="/src/assets/delete.svg" alt="Deletar tarefa" />
+          </button>
+        </li>
+
+        <li>
+          <label class="checked">
+            <input type="checkbox">
+            minha tarefa 2
+          </label>
+
+          <button>
+            <img src="/src/assets/delete.svg" alt="Deletar tarefa" />
+          </button>
+        </li>
+
+        <li>
+          <label>
+            <input type="checkbox">
+            minha tarefa 3_
+          </label>
+
+          <button>
+            <img src="/src/assets/delete.svg" alt="Deletar tarefa" />
+          </button>
+        </li>
+      </ul>
+    </main>
+
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
