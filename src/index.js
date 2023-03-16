@@ -99,7 +99,7 @@ const Index = (function () {
         checkbox.addEventListener('click', handleUpdateTask);
       });
 
-      list.querySelectorAll('button')
+    list.querySelectorAll('button')
       .forEach(checkbox => {
         checkbox.addEventListener('click', handleDeleteTask);
       });
@@ -114,4 +114,4 @@ const Index = (function () {
   };
 })();
 
-document.addEventListener('DOMContentLoaded', Index.init);
+Index.init();
