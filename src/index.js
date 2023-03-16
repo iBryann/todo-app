@@ -7,14 +7,15 @@ const Index = (function () {
   const list = document.querySelector('#task-list');
   let tasks = [];
 
-  function createTaskNode(task) {
+  function createTaskNode({ id, checked, description }) {
     const listItem = document.createElement('li');
-    listItem.dataset.taskId = task.id;
+    const isChecked = checked ? 'checked' : '';
 
+    listItem.dataset.taskId = id;
     listItem.innerHTML = /*html*/`
-      <label>
-        <input type="checkbox" ${task.checked ? 'checked' : ''}>
-        ${task.description}
+      <label class="${isChecked}">
+        <input type="checkbox" ${isChecked}>
+        ${description}
       </label>
 
       <button>
@@ -76,15 +77,15 @@ const Index = (function () {
     events();
   }
 
-  function handleUpdateTask(event) {
-    const { taskId } = event.target.closest('li').dataset;
+  function handleUpdateTask({ target }) {
+    const { taskId } = target.closest('li').dataset;
 
     updateTask(taskId);
     renderTaskList();
   }
 
-  function handleDeleteTask(event) {
-    const { taskId } = event.target.closest('li').dataset;
+  function handleDeleteTask({ target }) {
+    const { taskId } = target.closest('li').dataset;
 
     deleteTask(taskId);
     renderTaskList();
